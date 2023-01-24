@@ -1,4 +1,8 @@
-let compChoice = Math.floor((Math.random() * 5) + 1);
+// let compChoice = Math.floor((Math.random() * 5) + 1);
+const randNum = () => {
+    return Math.floor((Math.random() * 5) + 1);
+} 
+let compChoice = randNum();
 console.log(compChoice);
 let playerChoice;
 let main = document.querySelector("main");
@@ -8,6 +12,7 @@ let paper = document.getElementById("paper");
 let scissors = document.getElementById("scissors");
 let lizard = document.getElementById("lizard");
 let spock = document.getElementById("spock");
+let playAgain = document.getElementById("play-again");
 
 let resultDiv = document.createElement('div');
 resultDiv.id = 'result';
@@ -16,13 +21,13 @@ main.appendChild(resultDiv);
 resultDiv.style.display = "none";
 
 const playerRock = () => {
-
     resultDiv.style.display = "block";
+    playerChoice = "Rock";
     if(compChoice === 3)
         {
             resultDiv.innerHTML = `
-            <p>You chose rock and the computer chose Scissors</p>
-            <p>Rock crushes Scissors!</p>
+            <p>You chose ${playerChoice} and the computer chose Scissors</p>
+            <p>${playerChoice} crushes Scissors!</p>
             <p>You win!!!!!</p>
             `;
         }
@@ -30,8 +35,8 @@ const playerRock = () => {
     if(compChoice === 4)
         {
             resultDiv.innerHTML = `
-            <p>You chose Rock and the computer chose Lizard</p>
-            <p>Rock crushes Lizard!</p>
+            <p>You chose ${playerChoice} and the computer chose Lizard</p>
+            <p>${playerChoice} crushes Lizard!</p>
             <p>You win!!!!!</p>            
             `;
         }
@@ -39,8 +44,8 @@ const playerRock = () => {
     if(compChoice === 2)
         {
             resultDiv.innerHTML = `
-            <p>You chose Rock and the computer chose Paper</p>
-            <p>Paper covers Rock!</p>
+            <p>You chose ${playerChoice} and the computer chose Paper</p>
+            <p>Paper covers ${playerChoice}!</p>
             <p>You lose :(</p>
             `;
         }
@@ -48,19 +53,18 @@ const playerRock = () => {
     if(compChoice === 5)
         {
             resultDiv.innerHTML = `
-            <p>You chose Rock and the computer chose Spock</p>
-            <p>Spock vaporizes Rock!</p>
+            <p>You chose ${playerChoice} and the computer chose Spock</p>
+            <p>Spock vaporizes ${playerChoice}!</p>
             <p>You lose :(</p>
             `;
         }
     
-    if(compChoice === 1)
-        {
-            resultDiv.innerHTML = `
-            <p>You both chose Rock</p>
-            <p>It's a draw!</p>
-            `;
-        }
+    if(compChoice === 1) {
+        resultDiv.innerHTML = `
+        <p>You both chose ${playerChoice}</p>
+        <p>It's a draw!</p>
+        `;
+    }
 }
 
 const playerPaper = () => {
@@ -102,7 +106,151 @@ const playerPaper = () => {
             `;
         }
     
-    else {
+    if(compChoice === 2) {
+        resultDiv.innerHTML = `
+        <p>You both chose ${playerChoice}</p>
+        <p>It's a draw!</p>
+        `;
+    }
+
+}
+
+const playerScissors = () => {
+    resultDiv.style.display = "block";
+    playerChoice = 'Scissors';
+    if(compChoice === 2)
+        {
+            resultDiv.innerHTML = `
+            <p>You chose ${playerChoice} and the computer chose Paper</p>
+            <p>${playerChoice} cuts Paper!</p>
+            <p>You win!!!!!</p>
+            `;
+        }
+
+    if(compChoice === 4)
+        {
+            resultDiv.innerHTML = `
+            <p>You chose ${playerChoice} and the computer chose Lizard</p>
+            <p>${playerChoice} decapitate Lizard!</p>
+            <p>You win!!!!!</p>            
+            `;
+        }
+    
+    if(compChoice === 1)
+        {
+            resultDiv.innerHTML = `
+            <p>You chose ${playerChoice} and the computer chose Rock</p>
+            <p>Rock crushes ${playerChoice}!</p>
+            <p>You lose :(</p>
+            `;
+        }
+
+    if(compChoice === 5)
+        {
+            resultDiv.innerHTML = `
+            <p>You chose ${playerChoice} and the computer chose Spock</p>
+            <p>Spock smashes ${playerChoice}!</p>
+            <p>You lose :(</p>
+            `;
+        }
+    
+    if(compChoice === 3) {
+        resultDiv.innerHTML = `
+        <p>You both chose ${playerChoice}</p>
+        <p>It's a draw!</p>
+        `;
+    }
+
+}
+
+const playerLizard = () => {
+    resultDiv.style.display = "block";
+    playerChoice = 'Lizard';
+    if(compChoice === 2)
+        {
+            resultDiv.innerHTML = `
+            <p>You chose ${playerChoice} and the computer chose Paper</p>
+            <p>${playerChoice} eats Paper!</p>
+            <p>You win!!!!!</p>
+            `;
+        }
+
+    if(compChoice === 5)
+        {
+            resultDiv.innerHTML = `
+            <p>You chose ${playerChoice} and the computer chose Spock</p>
+            <p>${playerChoice} poisons Spock!</p>
+            <p>You win!!!!!</p>            
+            `;
+        }
+    
+    if(compChoice === 1)
+        {
+            resultDiv.innerHTML = `
+            <p>You chose ${playerChoice} and the computer chose Rock</p>
+            <p>Rock crushes ${playerChoice}!</p>
+            <p>You lose :(</p>
+            `;
+        }
+
+    if(compChoice === 3)
+        {
+            resultDiv.innerHTML = `
+            <p>You chose ${playerChoice} and the computer chose Scissors</p>
+            <p>Scissors decapitate ${playerChoice}!</p>
+            <p>You lose :(</p>
+            `;
+        }
+    
+    if(compChoice === 4) {
+        resultDiv.innerHTML = `
+        <p>You both chose ${playerChoice}</p>
+        <p>It's a draw!</p>
+        `;
+    }
+
+}
+
+const playerSpock = () => {
+    resultDiv.style.display = "block";
+    playerChoice = 'Spock';
+    if(compChoice === 1)
+        {
+            resultDiv.innerHTML = `
+            <p>You chose ${playerChoice} and the computer chose Rock</p>
+            <p>${playerChoice} vaporizes Rock!</p>
+            <p>You win!!!!!</p>
+            `;
+        }
+
+    if(compChoice === 3)
+        {
+            resultDiv.innerHTML = `
+            <p>You chose ${playerChoice} and the computer chose Scissors</p>
+            <p>${playerChoice} smashes Scissors!</p>
+            <p>You win!!!!!</p>            
+            `;
+        }
+    
+    if(compChoice === 2)
+        {
+            resultDiv.innerHTML = `
+            <p>You chose ${playerChoice} and the computer chose Paper</p>
+            <p>Paper disproves ${playerChoice}!</p>
+            <p>You lose :(</p>
+            `;
+        }
+
+    if(compChoice === 4)
+        {
+            resultDiv.innerHTML = `
+            <p>You chose ${playerChoice} and the computer chose Lizard</p>
+            <p>Lizard poisons ${playerChoice}!</p>
+            <p>You lose :(</p>
+            `;
+        }
+    
+    if(compChoice === 5) {
         resultDiv.innerHTML = `
         <p>You both chose ${playerChoice}</p>
         <p>It's a draw!</p>
@@ -115,37 +263,14 @@ rock.addEventListener('click', playerRock);
 
 paper.addEventListener('click', playerPaper);
 
-scissors.addEventListener('click', () => {
-    playerChoice = 3;
+scissors.addEventListener('click', playerScissors);
+
+lizard.addEventListener('click', playerLizard);
+
+spock.addEventListener('click', playerSpock);
+
+playAgain.addEventListener('click', () => {
+    // console.log("playAgain");
+    compChoice = randNum();
+    console.log(compChoice);
 });
-
-lizard.addEventListener('click', () => {
-    playerChoice = 4;
-});
-
-spock.addEventListener('click', () => {
-    playerChoice = 5;
-})
-
-
-//Below are 3 if statements if the user chooses 1 (Rock)
-if(playerChoice === 1 && compChoice === 3)
-{
-console.log(playerChoice);
-console.log("test");
-let resultDiv = document.createElement('div');
-resultDiv.id = 'userRock';
-resultDiv.class = 'userRock';
-main.appendChild(resultDiv);
-resultDiv.innerHTML = `
-<p>You chose rock and the computer chose Scissors</p>
-<p>Rock crushes Scissors!</p>
-<p>You win!!!!!</p>
-`;
-}
-
-if (playerChoice) {
-    console.log("test");
-}
-
-

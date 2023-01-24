@@ -17,6 +17,7 @@ resultDiv.style.display = "none";
 
 const playerRock = () => {
 
+    resultDiv.style.display = "block";
     if(compChoice === 3)
         {
             resultDiv.innerHTML = `
@@ -24,7 +25,6 @@ const playerRock = () => {
             <p>Rock crushes Scissors!</p>
             <p>You win!!!!!</p>
             `;
-            resultDiv.style.display = "block";
         }
 
     if(compChoice === 4)
@@ -63,11 +63,57 @@ const playerRock = () => {
         }
 }
 
+const playerPaper = () => {
+    resultDiv.style.display = "block";
+    playerChoice = 'Paper';
+    if(compChoice === 1)
+        {
+            resultDiv.innerHTML = `
+            <p>You chose Paper and the computer chose Rock</p>
+            <p>Paper covers Rock!</p>
+            <p>You win!!!!!</p>
+            `;
+        }
+
+    if(compChoice === 5)
+        {
+            resultDiv.innerHTML = `
+            <p>You chose ${playerChoice} and the computer chose Spock</p>
+            <p>${playerChoice} disproves Spock!</p>
+            <p>You win!!!!!</p>            
+            `;
+        }
+    
+    if(compChoice === 3)
+        {
+            resultDiv.innerHTML = `
+            <p>You chose ${playerChoice} and the computer chose Scissors</p>
+            <p>Scissors cuts ${playerChoice}!</p>
+            <p>You lose :(</p>
+            `;
+        }
+
+    if(compChoice === 4)
+        {
+            resultDiv.innerHTML = `
+            <p>You chose ${playerChoice} and the computer chose Lizard</p>
+            <p>Lizard eats ${playerChoice}!</p>
+            <p>You lose :(</p>
+            `;
+        }
+    
+    else {
+        resultDiv.innerHTML = `
+        <p>You both chose ${playerChoice}</p>
+        <p>It's a draw!</p>
+        `;
+    }
+
+}
+
 rock.addEventListener('click', playerRock);
 
-paper.addEventListener('click', () => {
-    playerChoice = 2;
-});
+paper.addEventListener('click', playerPaper);
 
 scissors.addEventListener('click', () => {
     playerChoice = 3;

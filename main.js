@@ -9,11 +9,13 @@ let scissors = document.getElementById("scissors");
 let lizard = document.getElementById("lizard");
 let spock = document.getElementById("spock");
 
+let resultDiv = document.createElement('div');
+resultDiv.id = 'result';
+resultDiv.class = 'result';
+main.appendChild(resultDiv);
+resultDiv.style.display = "none";
+
 const playerRock = () => {
-    let resultDiv = document.createElement('div');
-    resultDiv.id = 'userRock';
-    resultDiv.class = 'userRock';
-    main.appendChild(resultDiv);
 
     if(compChoice === 3)
         {
@@ -22,6 +24,7 @@ const playerRock = () => {
             <p>Rock crushes Scissors!</p>
             <p>You win!!!!!</p>
             `;
+            resultDiv.style.display = "block";
         }
 
     if(compChoice === 4)

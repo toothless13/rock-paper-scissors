@@ -24,6 +24,7 @@ resultDiv.style.display = "none";
 
 const playerRock = () => {
     resultDiv.style.display = "block";
+    playAgain.style.display = "block";
     playerChoice = "Rock";
     if(compChoice === 3)
         {
@@ -71,6 +72,7 @@ const playerRock = () => {
 
 const playerPaper = () => {
     resultDiv.style.display = "block";
+    playAgain.style.display = "block";
     playerChoice = 'Paper';
     if(compChoice === 1)
         {
@@ -119,6 +121,7 @@ const playerPaper = () => {
 
 const playerScissors = () => {
     resultDiv.style.display = "block";
+    playAgain.style.display = "block";
     playerChoice = 'Scissors';
     if(compChoice === 2)
         {
@@ -167,6 +170,7 @@ const playerScissors = () => {
 
 const playerLizard = () => {
     resultDiv.style.display = "block";
+    playAgain.style.display = "block";
     playerChoice = 'Lizard';
     if(compChoice === 2)
         {
@@ -215,6 +219,7 @@ const playerLizard = () => {
 
 const playerSpock = () => {
     resultDiv.style.display = "block";
+    playAgain.style.display = "block";
     playerChoice = 'Spock';
     if(compChoice === 1)
         {
@@ -275,4 +280,5 @@ playAgain.addEventListener('click',() => {
     resultDiv.style.display = "none";
     compChoice = randNum();
     // console.log(compChoice);
+    playAgain.style.display = "none";
 });

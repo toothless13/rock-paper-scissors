@@ -21,6 +21,7 @@ resultDiv.class = 'result';
 // main.appendChild(resultDiv);
 playAgainDiv.prepend(resultDiv);
 resultDiv.style.display = "none";
+playAgain.style.display = "none";
 
 const playerRock = () => {
     resultDiv.style.display = "block";

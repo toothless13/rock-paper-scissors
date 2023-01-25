@@ -1,0 +1,22 @@
+{
+  "name": "rock-paper-scissors",
+  "version": "1.0.0",
+  "description": "A game of rock, paper, scissors, lizard, spock that can be played in the browser",
+  "main": "main.js",
+  "devDependencies": {
+    "mocha": "^10.2.0"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/toothless13/rock-paper-scissors.git"
+  },
+  "author": "timCodes",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/toothless13/rock-paper-scissors/issues"
+  },
+  "homepage": "https://github.com/toothless13/rock-paper-scissors#readme"
+}

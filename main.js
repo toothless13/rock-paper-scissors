@@ -3,7 +3,7 @@ const randNum = () => {
     return Math.floor((Math.random() * 5) + 1);
 } 
 let compChoice = randNum();
-console.log(compChoice);
+// console.log(compChoice);
 let playerChoice;
 let main = document.querySelector("main");
 
@@ -13,11 +13,13 @@ let scissors = document.getElementById("scissors");
 let lizard = document.getElementById("lizard");
 let spock = document.getElementById("spock");
 let playAgain = document.getElementById("play-again");
+let playAgainDiv = document.getElementById("play-again-div");
 
 let resultDiv = document.createElement('div');
 resultDiv.id = 'result';
 resultDiv.class = 'result';
-main.appendChild(resultDiv);
+// main.appendChild(resultDiv);
+playAgainDiv.prepend(resultDiv);
 resultDiv.style.display = "none";
 
 const playerRock = () => {
@@ -269,8 +271,8 @@ lizard.addEventListener('click', playerLizard);
 
 spock.addEventListener('click', playerSpock);
 
-playAgain.addEventListener('click', () => {
-    // console.log("playAgain");
+playAgain.addEventListener('click',() => {
+    resultDiv.style.display = "none";
     compChoice = randNum();
-    console.log(compChoice);
+    // console.log(compChoice);
 });

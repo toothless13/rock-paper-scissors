@@ -18,13 +18,21 @@ div.game-icons {
     margin: 0 auto;
 }
 
-button {
+button.game-icon {
     border-radius: 50%;
     /* border: 3px hotpink solid; */
     padding: 0;
     margin: 2rem;
+    opacity: 0.5;
+}
+
+button:hover {
+    /* border: 1px hotpink solid; */
+    opacity: 1;
+    cursor: pointer;
 }
 
 button img {
     border-radius: 50%;
+    /* width: 100%; */
 }

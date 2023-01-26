@@ -49,7 +49,7 @@ div.play-again-div {
 #result p {
     font-size: 1.5rem;
 }
-
+/* Makes 'You Win/Lose/Draw line larger and more prominent */
 #result p:last-child {
     font-size: 2rem;
     font-weight: 700;

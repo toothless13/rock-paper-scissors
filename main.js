@@ -1,9 +1,7 @@
-// let compChoice = Math.floor((Math.random() * 5) + 1);
 const randNum = () => {
     return Math.floor((Math.random() * 5) + 1);
 } 
 let compChoice = randNum();
-// console.log(compChoice);
 let playerChoice;
 let main = document.querySelector("main");
 
@@ -18,7 +16,6 @@ let playAgainDiv = document.getElementById("play-again-div");
 let resultDiv = document.createElement('div');
 resultDiv.id = 'result';
 resultDiv.class = 'result';
-// main.appendChild(resultDiv);
 playAgainDiv.prepend(resultDiv);
 resultDiv.style.display = "none";
 playAgain.style.display = "none";
@@ -280,6 +277,5 @@ spock.addEventListener('click', playerSpock);
 playAgain.addEventListener('click',() => {
     resultDiv.style.display = "none";
     compChoice = randNum();
-    // console.log(compChoice);
     playAgain.style.display = "none";
 });
